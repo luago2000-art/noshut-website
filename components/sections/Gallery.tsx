@@ -13,8 +13,8 @@ import { SectionWrapper } from '@/components/common/SectionWrapper'
 
 const FOLDER_LABELS: Record<string, { title: string; description: string; location: string }> = {
   'lavoro-01': {
-    title: 'Rack Server — Riordino Completo',
-    description: 'Riordino cablaggi e pulizia approfondita rack 42U',
+    title: 'Server — Pulizia Sedi Ventole',
+    description: 'Pulizia approfondita sedi ventole e componentistica interna',
     location: 'Roma, RM',
   },
   'lavoro-02': {

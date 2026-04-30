@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import { NAV_ITEMS } from '@/lib/constants'
 
@@ -50,21 +51,22 @@ export function Header() {
           {/* Logo */}
           <Link
             href="#"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             onClick={() => setOpen(false)}
           >
+            <Image
+              src="/logo/logo.png"
+              alt="NOSHUT"
+              width={40}
+              height={28}
+              className="h-7 w-auto object-contain"
+            />
             <div className="flex items-center">
               <span className="text-xl md:text-2xl font-black tracking-tight font-heading text-white group-hover:text-white/90 transition-colors">
                 NO
               </span>
               <span className="text-xl md:text-2xl font-black tracking-tight font-heading text-gradient">
                 SHUT
-              </span>
-            </div>
-            <div className="hidden sm:flex items-center gap-2 ml-2">
-              <div className="w-px h-4 bg-white/15" />
-              <span className="text-[11px] text-white/35 font-sans tracking-widest uppercase">
-                Data Center
               </span>
             </div>
           </Link>

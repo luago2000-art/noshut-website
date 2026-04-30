@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, MapPin, FileText, ArrowRight } from 'lucide-react'
 import { COMPANY, NAV_ITEMS, SERVICES } from '@/lib/constants'
 
@@ -38,9 +39,18 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14">
           {/* Col 1: Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-1 mb-5">
-              <span className="text-2xl font-black font-heading text-white">NO</span>
-              <span className="text-2xl font-black font-heading text-gradient">SHUT</span>
+            <div className="flex items-center gap-3 mb-5">
+              <Image
+                src="/logo/logo.png"
+                alt="NOSHUT"
+                width={36}
+                height={26}
+                className="h-6 w-auto object-contain"
+              />
+              <div className="flex items-center">
+                <span className="text-2xl font-black font-heading text-white">NO</span>
+                <span className="text-2xl font-black font-heading text-gradient">SHUT</span>
+              </div>
             </div>
             <p className="text-sm text-white/40 leading-relaxed mb-5">
               {COMPANY.description}

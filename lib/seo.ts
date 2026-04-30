@@ -5,6 +5,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://noshut.it'
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: '/logo/favicon.png',
+    shortcut: '/logo/favicon.png',
+    apple: '/logo/favicon.png',
+  },
   title: {
     default: `${COMPANY.name} — Pulizia Rack & Data Center | Roma`,
     template: `%s | ${COMPANY.name}`,

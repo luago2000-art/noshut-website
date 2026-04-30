@@ -27,9 +27,9 @@ const FOLDER_LABELS: Record<string, { title: string; description: string; locati
     location: 'Roma, RM',
   },
   'lavoro-03': {
-    title: 'Server Room — Manutenzione Periodica',
-    description: 'Intervento di manutenzione trimestrale programmata',
-    location: 'Napoli, NA',
+    title: 'Server — Pulizia Cover Plastiche',
+    description: 'Smontaggio, pulizia e ripristino cover plastiche server',
+    location: 'Roma, RM',
   },
 }
 

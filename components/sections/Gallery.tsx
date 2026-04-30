@@ -17,8 +17,8 @@ const FOLDER_POSITIONS: Record<string, { primaPosition?: string; dopoPosition?: 
 
 const FOLDER_LABELS: Record<string, { title: string; description: string; location: string }> = {
   'lavoro-01': {
-    title: 'Server — Pulizia Sedi Ventole',
-    description: 'Pulizia approfondita sedi ventole e componentistica interna',
+    title: 'Server HP — Pulizia Interna',
+    description: 'Pulizia approfondita componentistica e schede interne server HP',
     location: 'Roma, RM',
   },
   'lavoro-02': {

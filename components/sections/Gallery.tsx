@@ -11,6 +11,10 @@ import {
 import { BeforeAfterSlider } from '@/components/common/BeforeAfterSlider'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 
+const FOLDER_POSITIONS: Record<string, { primaPosition?: string; dopoPosition?: string }> = {
+  'lavoro-02': { dopoPosition: 'bottom' },
+}
+
 const FOLDER_LABELS: Record<string, { title: string; description: string; location: string }> = {
   'lavoro-01': {
     title: 'Server — Pulizia Sedi Ventole',
@@ -98,7 +102,12 @@ export function Gallery() {
                     aria-label={`Apri gallery ${meta?.title || folder}`}
                   >
                     <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] group-hover:border-[#0066FF]/40 transition-all duration-400 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-blue-900/30 top-glow-line">
-                      <BeforeAfterSlider folder={folder} title={meta?.title} />
+                      <BeforeAfterSlider
+                        folder={folder}
+                        title={meta?.title}
+                        primaPosition={FOLDER_POSITIONS[folder]?.primaPosition}
+                        dopoPosition={FOLDER_POSITIONS[folder]?.dopoPosition}
+                      />
 
                       {/* Hover overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#080C22]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -137,7 +146,11 @@ export function Gallery() {
           {selected && (
             <div className="px-6 pb-6">
               <div className="rounded-xl overflow-hidden">
-                <BeforeAfterSlider folder={selected} />
+                <BeforeAfterSlider
+                  folder={selected}
+                  primaPosition={FOLDER_POSITIONS[selected]?.primaPosition}
+                  dopoPosition={FOLDER_POSITIONS[selected]?.dopoPosition}
+                />
               </div>
               {selectedMeta && (
                 <div className="mt-4 flex items-center justify-between text-sm">

@@ -5,9 +5,16 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 interface BeforeAfterSliderProps {
   folder: string
   title?: string
+  primaPosition?: string
+  dopoPosition?: string
 }
 
-export function BeforeAfterSlider({ folder, title }: BeforeAfterSliderProps) {
+export function BeforeAfterSlider({
+  folder,
+  title,
+  primaPosition = 'center',
+  dopoPosition = 'center',
+}: BeforeAfterSliderProps) {
   return (
     <div className="rounded-2xl overflow-hidden border border-white/10">
       <ReactCompareSlider
@@ -15,14 +22,14 @@ export function BeforeAfterSlider({ folder, title }: BeforeAfterSliderProps) {
           <ReactCompareSliderImage
             src={`/images/before-after/${folder}/prima.jpg`}
             alt={`${title || folder} — Prima`}
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: primaPosition }}
           />
         }
         itemTwo={
           <ReactCompareSliderImage
             src={`/images/before-after/${folder}/dopo.jpg`}
             alt={`${title || folder} — Dopo`}
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: dopoPosition }}
           />
         }
         style={{ height: 320 }}

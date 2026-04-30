@@ -16,7 +16,7 @@ const ease = 'easeOut' as const
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden mesh-bg pt-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden mesh-bg pt-20 pb-24">
       <ParticleBackground />
 
       {/* Dot grid overlay */}

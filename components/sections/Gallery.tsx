@@ -18,9 +18,9 @@ const FOLDER_LABELS: Record<string, { title: string; description: string; locati
     location: 'Roma, RM',
   },
   'lavoro-02': {
-    title: 'Data Center — Bonifica Post-Cantiere',
-    description: 'Bonifica completa dopo lavori di ristrutturazione',
-    location: 'Milano, MI',
+    title: 'Server — Pulizia Ventole',
+    description: 'Smontaggio, pulizia e rimontaggio ventole di raffreddamento server',
+    location: 'Roma, RM',
   },
   'lavoro-03': {
     title: 'Server Room — Manutenzione Periodica',

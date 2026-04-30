@@ -50,9 +50,9 @@ export function Header() {
 
           {/* Logo */}
           <Link
-            href="#"
+            href="#hero"
             className="flex items-center gap-3 group"
-            onClick={() => setOpen(false)}
+            onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
             <Image
               src="/logo/logo.png"

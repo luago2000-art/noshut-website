@@ -121,15 +121,18 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.a
+        href="#servizi"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/30 hover:text-white/60 transition-colors duration-300 cursor-pointer group"
       >
-        <span className="text-[10px] tracking-[0.25em] uppercase">Scorri</span>
-        <div className="w-px h-10 bg-gradient-to-b from-[#0066FF]/60 to-transparent animate-float" />
-      </motion.div>
+        <span className="text-[9px] tracking-[0.3em] uppercase font-semibold">Scorri</span>
+        <div className="relative w-5 h-8 rounded-full border border-white/20 group-hover:border-white/40 transition-colors flex items-start justify-center pt-1.5">
+          <div className="w-1 h-1.5 rounded-full bg-white/50 animate-bounce" />
+        </div>
+      </motion.a>
     </section>
   )
 }

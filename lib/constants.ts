@@ -11,7 +11,7 @@ export const COMPANY = {
   website: 'www.noshut.it',
   phone: '',
   description:
-    'Specialisti in pulizia rack, riordino cablaggi e bonifica data center per aziende IT, system integrator e appalti pubblici.',
+    'Specialisti in pulizia rack, riordino cablaggi e bonifica data center per aziende IT e MSP su tutto il territorio nazionale.',
 } as const
 
 export const NAV_ITEMS: NavItem[] = [
@@ -60,7 +60,7 @@ export const SERVICES: ServiceItem[] = [
     icon: 'Building2',
     title: 'Bonifica Data Center',
     description:
-      'Interventi post-cantiere e bonifica completa di sale server: rimozione detriti edili, cavi obsoleti e materiali non conformi.',
+      'Interventi post-cantiere e bonifica completa di sale server: rimozione detriti, cavi obsoleti e materiali non conformi.',
     features: [
       'Rimozione detriti post-cantiere',
       'Smaltimento cavi obsoleti',
@@ -73,7 +73,7 @@ export const SERVICES: ServiceItem[] = [
     icon: 'CalendarCheck',
     title: 'Manutenzione Periodica',
     description:
-      'Contratti di manutenzione programmata per mantenere l\'infrastruttura IT sempre pulita ed efficiente, con cadenza personalizzata.',
+      "Contratti di manutenzione programmata per mantenere l'infrastruttura IT sempre pulita ed efficiente, con cadenza personalizzata.",
     features: [
       'Contratti mensili o trimestrali',
       'Interventi programmati',
@@ -82,16 +82,16 @@ export const SERVICES: ServiceItem[] = [
     ],
   },
   {
-    id: 'subappalto-b2b',
+    id: 'partner-b2b',
     icon: 'Handshake',
-    title: 'Subappalto IT B2B',
+    title: 'Partner B2B',
     description:
-      'Partner ideale per system integrator e aziende che operano in appalti pubblici IT: P.IVA regolare, fatturazione elettronica, intervento rapido.',
+      'Supporto tecnico dedicato per aziende IT e MSP: subappalto specializzato, fatturazione B2B, disponibilità nazionale e intervento rapido.',
     features: [
       'Fatturazione elettronica B2B',
       'Disponibilità nazionale',
       'Intervento rapido garantito',
-      'Compatibile appalti pubblici',
+      'Accordi quadro personalizzati',
     ],
   },
   {
@@ -99,7 +99,7 @@ export const SERVICES: ServiceItem[] = [
     icon: 'MapPin',
     title: 'Coverage Italia',
     description:
-      'Interventi su tutto il territorio nazionale per aziende, data center, enti pubblici e system integrator con base a Roma.',
+      'Interventi su tutto il territorio nazionale per aziende private, data center e MSP con base operativa a Roma.',
     features: [
       'Copertura nazionale',
       'Base operativa Roma',
@@ -116,7 +116,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     role: 'IT Manager',
     company: 'TechGroup Italia',
     quote:
-      'NOSHUT ha trasformato il nostro data center: da un groviglio di cavi impossibile da gestire a un\'infrastruttura impeccabile. Professionalità e velocità eccezionali.',
+      "NOSHUT ha trasformato il nostro data center: da un groviglio di cavi impossibile da gestire a un'infrastruttura impeccabile. Professionalità e velocità eccezionali.",
     rating: 5,
   },
   {
@@ -125,7 +125,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     role: 'Responsabile Infrastrutture',
     company: 'Systema Integrations',
     quote:
-      'Collaboriamo con NOSHUT per tutti i nostri appalti pubblici. Luigi è il nostro riferimento per pulizia e riordino rack: affidabile, puntuale e documentato.',
+      'Utilizziamo NOSHUT per la manutenzione periodica dei rack dei nostri clienti. Luigi è il nostro riferimento per pulizia e riordino: affidabile, puntuale e sempre documentato.',
     rating: 5,
   },
   {
@@ -134,7 +134,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     role: 'CTO',
     company: 'DataCare SpA',
     quote:
-      'Dopo l\'intervento di bonifica post-cantiere, la nostra server room era di un livello completamente diverso. Consiglio NOSHUT a chiunque abbia un data center da gestire.',
+      'Dopo la bonifica post-cantiere la nostra server room era di un livello completamente diverso. Consiglio NOSHUT a chiunque abbia un data center da gestire.',
     rating: 5,
   },
 ]
@@ -147,34 +147,34 @@ export const FAQ_ITEMS: FAQItem[] = [
       'Sì, operiamo su tutto il territorio nazionale. Siamo basati a Roma ma effettuiamo trasferte in tutta Italia, incluso il Sud. I costi e la logistica vengono concordati preventivamente.',
   },
   {
-    id: 'appalti-pubblici',
-    question: 'Lavorate in subappalto per appalti pubblici IT?',
+    id: 'aziende-private',
+    question: 'Lavorate anche per aziende private di piccole dimensioni?',
     answer:
-      'Assolutamente sì. Siamo una ditta individuale con P.IVA regolare (18471141004), fatturazione elettronica attiva e regime idoneo per collaborare con aziende che operano in gare d\'appalto pubbliche nel settore IT.',
+      'Assolutamente sì. Lavoriamo con aziende di qualsiasi dimensione, dalle PMI con un singolo rack agli enterprise con sale server complesse. Il preventivo è sempre gratuito e personalizzato in base alle reali esigenze.',
   },
   {
     id: 'certificazioni',
     question: 'Quali certificazioni avete?',
     answer:
-      'Utilizziamo attrezzatura professionale ESD-safe certificata per la pulizia di apparati elettronici sensibili. Operiamo sempre nel rispetto delle normative vigenti per la sicurezza nei luoghi di lavoro (D.Lgs 81/2008).',
+      "Utilizziamo attrezzatura professionale ESD-safe certificata per la pulizia di apparati elettronici sensibili. Operiamo sempre nel rispetto delle normative vigenti per la sicurezza nei luoghi di lavoro (D.Lgs 81/2008).",
   },
   {
     id: 'intervento-tipo',
     question: 'Come si svolge un intervento tipo?',
     answer:
-      'Un intervento standard prevede: (1) sopralluogo o valutazione da remoto, (2) preventivo dettagliato, (3) intervento programmato con report fotografico pre/post, (4) consegna documentazione as-built. Ogni intervento è personalizzato in base alle esigenze del cliente.',
+      "Un intervento standard prevede: (1) sopralluogo o valutazione da remoto, (2) preventivo dettagliato, (3) intervento programmato con report fotografico pre/post, (4) consegna documentazione as-built. Ogni intervento è personalizzato in base alle esigenze del cliente.",
   },
   {
     id: 'periodicita-pulizia',
-    question: 'Qual è la periodicità consigliata per la pulizia rack?',
+    question: "Qual è la periodicità consigliata per la pulizia rack?",
     answer:
-      'Per un data center in produzione raccomandiamo un intervento trimestrale per la pulizia approfondita e mensile per la manutenzione ordinaria. Per ambienti polverosi o con alta densità di apparati, la frequenza può essere aumentata. Offriamo contratti personalizzati.',
+      'Per un data center in produzione raccomandiamo un intervento trimestrale per la pulizia approfondita e mensile per la manutenzione ordinaria. Per ambienti polverosi o con alta densità di apparati la frequenza può essere aumentata. Offriamo contratti personalizzati.',
   },
   {
     id: 'tempo-intervento',
     question: 'In quanto tempo riuscite a intervenire?',
     answer:
-      'Per interventi programmati, solitamente entro 3-5 giorni lavorativi dalla conferma. Per emergenze concordiamo la massima disponibilità. I tempi dipendono anche dalla complessità dell\'intervento e dalla localizzazione geografica.',
+      'Per interventi programmati solitamente entro 3-5 giorni lavorativi dalla conferma. Per emergenze concordiamo la massima disponibilità. I tempi dipendono anche dalla complessità e dalla localizzazione geografica.',
   },
 ]
 

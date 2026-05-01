@@ -5,7 +5,7 @@ import { Server, Cable, Building2, CalendarCheck, Handshake, MapPin } from 'luci
 import { cn } from '@/lib/utils'
 import type { ServiceItem } from '@/lib/types'
 
-const ICONS: Record<string, React.ElementType> = {
+const ICONS: Record<string, React.ElementType<{ className?: string }>> = {
   Server, Cable, Building2, CalendarCheck, Handshake, MapPin,
 }
 

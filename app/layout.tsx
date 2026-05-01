@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { baseMetadata, localBusinessSchema } from '@/lib/seo'
+import { CustomCursor } from '@/components/common/CustomCursor'
+import { SmoothScroll } from '@/components/common/SmoothScroll'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,7 +30,9 @@ export default function RootLayout({
       lang="it"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0A0E27] text-white">
+      <body className="min-h-full flex flex-col bg-[#060911] text-white">
+        <SmoothScroll />
+        <CustomCursor />
         {children}
         <Script
           id="local-business-schema"

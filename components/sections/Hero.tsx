@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { AnimatedCounter } from '@/components/common/AnimatedCounter'
 import { HERO_STATS } from '@/lib/constants'
@@ -122,16 +122,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.a
-        href="#servizi"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 hover:text-white/60 transition-colors z-10"
-      >
-        <ChevronDown className="w-5 h-5 animate-bounce" />
-      </motion.a>
     </section>
   )
 }

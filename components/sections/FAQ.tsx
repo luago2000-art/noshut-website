@@ -1,55 +1,59 @@
+'use client'
+
+import { useState } from 'react'
+import { Plus, Minus } from 'lucide-react'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
 import { FAQ_ITEMS } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 
 export function FAQ() {
+  const [open, setOpen] = useState<number | null>(0)
+
   return (
-    <section id="faq" className="py-28 bg-[#080C22] relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0066FF]/15 to-transparent" />
-      <div className="absolute inset-0 dot-grid opacity-10 pointer-events-none" />
-
-      {/* Decorative number */}
-      <div
-        className="absolute right-8 top-1/2 -translate-y-1/2 text-[20vw] font-black font-heading text-white/[0.015] leading-none select-none pointer-events-none"
-        aria-hidden
-      >
-        ?
-      </div>
-
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionWrapper className="text-center mb-16">
-          <span className="section-label">Domande frequenti</span>
-          <h2 className="text-4xl md:text-5xl font-black font-heading text-white mb-4">
-            Hai dubbi?
-          </h2>
-          <p className="text-white/45 text-lg">
-            Tutto quello che devi sapere prima di contattarci.
-          </p>
+    <section id="faq" className="py-24 bg-[#050505]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionWrapper>
+          <div className="text-center mb-14">
+            <span className="section-label justify-center">FAQ</span>
+            <h2 className="font-display font-black text-white leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+              Domande
+              <span className="text-[#00E5FF]"> frequenti.</span>
+            </h2>
+          </div>
         </SectionWrapper>
 
-        <SectionWrapper delay={0.1}>
-          <Accordion className="space-y-2.5">
-            {FAQ_ITEMS.map((item) => (
-              <AccordionItem
-                key={item.id}
-                value={item.id}
-                className="relative rounded-2xl px-6 overflow-hidden transition-all duration-300 bg-white/[0.04] border border-white/[0.07] data-[state=open]:border-[#0066FF]/40 data-[state=open]:bg-[#0066FF]/[0.06] top-glow-line shimmer-card"
+        <div className="space-y-2">
+          {FAQ_ITEMS.map((item, i) => (
+            <SectionWrapper key={i} delay={i * 0.05}>
+              <div
+                className={cn(
+                  'rounded-xl border transition-all duration-300',
+                  open === i
+                    ? 'border-[#00E5FF]/20 bg-[#00E5FF]/[0.03]'
+                    : 'border-white/[0.05] bg-white/[0.02] hover:border-white/[0.09]',
+                )}
               >
-                <AccordionTrigger className="text-left text-white/80 hover:text-white font-semibold py-5 text-[15px] [&[data-state=open]]:text-[#00D4FF] hover:no-underline transition-colors">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-white/50 text-sm leading-relaxed pb-5">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </SectionWrapper>
+                <button
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                  onClick={() => setOpen(open === i ? null : i)}
+                  aria-expanded={open === i}
+                >
+                  <span className={cn('text-sm font-semibold transition-colors', open === i ? 'text-white' : 'text-white/70')}>
+                    {item.question}
+                  </span>
+                  <span className={cn('flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors', open === i ? 'bg-[#00E5FF] text-[#050505]' : 'bg-white/5 text-white/30')}>
+                    {open === i ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
+                  </span>
+                </button>
+                {open === i && (
+                  <div className="px-6 pb-6">
+                    <p className="text-sm text-white/40 leading-relaxed">{item.answer}</p>
+                  </div>
+                )}
+              </div>
+            </SectionWrapper>
+          ))}
+        </div>
       </div>
     </section>
   )

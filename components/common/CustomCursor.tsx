@@ -57,13 +57,13 @@ export function CustomCursor() {
       {/* Outer ring */}
       <div
         ref={outerRef}
-        className="fixed top-0 left-0 w-10 h-10 rounded-full border border-[#8ABDD4]/60 pointer-events-none z-[9999] transition-[width,height,border-color,background-color] duration-200"
+        className="fixed top-0 left-0 w-10 h-10 rounded-full border border-[#00E5FF]/50 pointer-events-none z-[9999] transition-[width,height,border-color,background-color] duration-200"
         style={{ willChange: 'transform' }}
       />
       {/* Inner dot */}
       <div
         ref={innerRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#8ABDD4] pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#00E5FF] pointer-events-none z-[9999]"
         style={{ willChange: 'transform' }}
       />
       <style>{`
@@ -72,8 +72,8 @@ export function CustomCursor() {
         .cursor-hover {
           width: 56px !important;
           height: 56px !important;
-          border-color: rgba(138, 189, 212, 0.9) !important;
-          background-color: rgba(138, 189, 212, 0.08) !important;
+          border-color: rgba(0, 229, 255, 0.8) !important;
+          background-color: rgba(0, 229, 255, 0.06) !important;
         }
       `}</style>
     </>

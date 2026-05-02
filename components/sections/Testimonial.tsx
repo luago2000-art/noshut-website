@@ -1,26 +1,20 @@
-import { SectionWrapper } from '@/components/common/SectionWrapper'
 import { TestimonialCarousel } from '@/components/common/TestimonialCarousel'
+import { SectionWrapper } from '@/components/common/SectionWrapper'
 
 export function Testimonial() {
   return (
-    <section className="py-28 bg-[#0A0E27] relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-
-      {/* Glow orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionWrapper className="text-center mb-16">
-          <span className="section-label">Cosa dicono i clienti</span>
-          <h2 className="text-4xl md:text-5xl font-black font-heading text-white mb-4">
-            Testimonianze
-          </h2>
-          <p className="text-white/45 max-w-xl mx-auto text-lg">
-            Aziende IT e system integrator che collaborano con NOSHUT da anni.
-          </p>
+    <section className="py-24 bg-[#080808]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionWrapper>
+          <div className="text-center mb-14">
+            <span className="section-label justify-center">Testimonianze</span>
+            <h2 className="font-display font-black text-white leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+              Lo dicono i nostri
+              <span className="text-[#00E5FF]"> clienti.</span>
+            </h2>
+          </div>
         </SectionWrapper>
-
-        <SectionWrapper delay={0.15}>
+        <SectionWrapper delay={0.1}>
           <TestimonialCarousel />
         </SectionWrapper>
       </div>

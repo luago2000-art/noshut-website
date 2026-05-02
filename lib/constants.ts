@@ -1,18 +1,18 @@
-import type { ServiceItem, TestimonialItem, FAQItem, NavItem, StatItem } from './types'
+import type { NavItem, ServiceItem, Testimonial, FaqItem } from './types'
 
 export const COMPANY = {
   name: 'NOSHUT',
   owner: 'Luigi Agostino',
-  fullName: 'NOSHUT — Luigi Agostino',
   address: 'Via Ventotene 38, 00139 Roma (RM)',
   piva: '18471141004',
-  pec: 'luigi.agostino@pec.fiscozen.it',
   email: 'l.agostino@noshut.it',
-  website: 'www.noshut.it',
-  phone: '',
+  pec: 'luigi.agostino@pec.fiscozen.it',
+  phone: '+39 06 0000000',
+  whatsapp: '+393000000000',
+  website: 'https://noshut.it',
   description:
-    'Specialisti in pulizia rack, riordino cablaggi e bonifica data center per aziende IT e MSP su tutto il territorio nazionale.',
-} as const
+    'Specialisti in pulizia rack, riordino cablaggi e bonifica data center. Partner affidabile per system integrator e appalti pubblici IT in tutta Italia.',
+}
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Servizi', href: '#servizi' },
@@ -22,160 +22,149 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Contatti', href: '#contatti' },
 ]
 
-export const HERO_STATS: StatItem[] = [
+export const STATS = [
   { value: 500, suffix: '+', label: 'Rack puliti' },
-  { value: 80, suffix: '+', label: 'Data center serviti' },
-  { value: 120, suffix: '+', label: 'Clienti soddisfatti' },
+  { value: 80, suffix: '+', label: 'Data center' },
+  { value: 120, suffix: '+', label: 'Clienti attivi' },
+  { value: 8, suffix: '+', label: 'Anni di esperienza' },
 ]
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'pulizia-rack',
     icon: 'Server',
     title: 'Pulizia Rack & Server Room',
     description:
-      'Rimozione professionale di polvere e detriti da rack, UPS, patch panel e apparati attivi con attrezzatura specializzata ESD-safe.',
+      'Pulizia professionale di rack, UPS, patch panel e armadi in fibra con aspiratori ESD-safe e prodotti specifici.',
     features: [
-      'Aspirazione ESD-safe certificata',
-      'Sanificazione con prodotti specifici',
-      'Pulizia interna ed esterna',
-      'Report fotografico pre/post intervento',
+      'Aspiratori ESD-safe certificati',
+      'Prodotti antistatici professionali',
+      'Report fotografico pre/post',
+      'Interventi in orario notturno',
     ],
   },
   {
-    id: 'riordino-cablaggi',
     icon: 'Cable',
     title: 'Riordino Cablaggi',
     description:
-      'Gestione professionale di cavi UTP, fibra ottica e alimentazione: etichettatura, percorsi ottimizzati e documentazione completa.',
+      'Riorganizzazione e documentazione completa del cablaggio strutturato: rame, fibra ottica e patch cord.',
     features: [
-      'Etichettatura sistematica cavi',
-      'Ottimizzazione percorsi',
-      'Gestione fibra ottica',
-      'Documentazione as-built',
+      'Etichettatura numerica/colorata',
+      'Gestione canaline e fascette',
+      'Documentazione As-Built',
+      'Test e certificazione',
     ],
   },
   {
-    id: 'bonifica-data-center',
     icon: 'Building2',
     title: 'Bonifica Data Center',
     description:
-      'Interventi post-cantiere e bonifica completa di sale server: rimozione detriti, cavi obsoleti e materiali non conformi.',
+      'Bonifica completa post-cantiere o pre-collaudo: rimozione cavi morti, sanitizzazione ambienti, smaltimento materiali.',
     features: [
-      'Rimozione detriti post-cantiere',
-      'Smaltimento cavi obsoleti',
-      'Pulizia pavimento flottante',
-      'Bonifica completa sale CED',
+      'Rimozione cavi abbandonati',
+      'Sanitizzazione ambienti',
+      'Smaltimento certificato',
+      'Verbale di bonifica',
     ],
   },
   {
-    id: 'manutenzione-periodica',
     icon: 'CalendarCheck',
     title: 'Manutenzione Periodica',
     description:
-      "Contratti di manutenzione programmata per mantenere l'infrastruttura IT sempre pulita ed efficiente, con cadenza personalizzata.",
+      'Contratti di manutenzione mensile o trimestrale per mantenere l\'infrastruttura sempre in ordine e documentata.',
     features: [
-      'Contratti mensili o trimestrali',
+      'Contratti mensili/trimestrali',
       'Interventi programmati',
-      'Report di manutenzione',
-      'Priorità interventi urgenti',
+      'Reportistica periodica',
+      'SLA garantiti',
     ],
   },
   {
-    id: 'partner-b2b',
     icon: 'Handshake',
     title: 'Partner B2B',
     description:
-      'Supporto tecnico dedicato per aziende IT e MSP: subappalto specializzato, fatturazione B2B, disponibilità nazionale e intervento rapido.',
+      'Supporto tecnico white-label per MSP, system integrator e aziende IT che necessitano di un partner operativo affidabile.',
     features: [
-      'Fatturazione elettronica B2B',
-      'Disponibilità nazionale',
-      'Intervento rapido garantito',
-      'Accordi quadro personalizzati',
+      'Fatturazione B2B diretta',
+      'Disponibilità white-label',
+      'Coordinamento on-site',
+      'NDA e riservatezza',
     ],
   },
   {
-    id: 'coverage-italia',
     icon: 'MapPin',
-    title: 'Coverage Italia',
+    title: 'Copertura Nazionale',
     description:
-      'Interventi su tutto il territorio nazionale per aziende private, data center e MSP con base operativa a Roma.',
+      'Operativi su tutto il territorio italiano con base operativa a Roma e interventi in tutta Italia anche urgenti.',
     features: [
+      'Sede operativa Roma',
       'Copertura nazionale',
-      'Base operativa Roma',
-      'Trasferte concordate',
-      'Interventi urgenti disponibili',
+      'Interventi urgenti H24',
+      'Spostamenti inclusi',
     ],
   },
 ]
 
-export const TESTIMONIALS: TestimonialItem[] = [
+export const TESTIMONIALS: Testimonial[] = [
   {
-    id: '1',
     name: 'Marco Ferretti',
     role: 'IT Manager',
     company: 'TechGroup Italia',
     quote:
-      "NOSHUT ha trasformato il nostro data center: da un groviglio di cavi impossibile da gestire a un'infrastruttura impeccabile. Professionalità e velocità eccezionali.",
+      'NOSHUT ha trasformato il nostro data center: da un groviglio di cavi ingestibile a un\'infrastruttura ordinata e documentata. Professionali, veloci e discreti.',
     rating: 5,
   },
   {
-    id: '2',
     name: 'Alessandra Conti',
-    role: 'Responsabile Infrastrutture',
+    role: 'Infrastructure Manager',
     company: 'Systema Integrations',
     quote:
-      'Utilizziamo NOSHUT per la manutenzione periodica dei rack dei nostri clienti. Luigi è il nostro riferimento per pulizia e riordino: affidabile, puntuale e sempre documentato.',
+      'Li utilizziamo come partner operativo su tutti i nostri cantieri. Affidabili, puntuali e con un occhio di riguardo per la sicurezza. Li consiglio senza riserve.',
     rating: 5,
   },
   {
-    id: '3',
     name: 'Roberto Mancini',
     role: 'CTO',
     company: 'DataCare SpA',
     quote:
-      'Dopo la bonifica post-cantiere la nostra server room era di un livello completamente diverso. Consiglio NOSHUT a chiunque abbia un data center da gestire.',
+      'Dopo la bonifica completa del nostro CED il miglioramento è stato immediato: temperature più basse, meno interventi, infrastruttura finalmente documentata.',
     rating: 5,
   },
 ]
 
-export const FAQ_ITEMS: FAQItem[] = [
+export const FAQ_ITEMS: FaqItem[] = [
   {
-    id: 'sud-italia',
-    question: 'Eseguite interventi al Sud Italia?',
+    question: 'Operate anche fuori Roma e nel Sud Italia?',
     answer:
-      'Sì, operiamo su tutto il territorio nazionale. Siamo basati a Roma ma effettuiamo trasferte in tutta Italia, incluso il Sud. I costi e la logistica vengono concordati preventivamente.',
+      'Sì, siamo operativi su tutto il territorio nazionale. La base operativa è a Roma ma effettuiamo interventi in tutta Italia, incluso il Sud. I costi di trasferta vengono valutati in sede di preventivo.',
   },
   {
-    id: 'aziende-private',
-    question: 'Lavorate anche per aziende private di piccole dimensioni?',
+    question: 'Lavorate anche per piccole aziende o PMI?',
     answer:
-      'Assolutamente sì. Lavoriamo con aziende di qualsiasi dimensione, dalle PMI con un singolo rack agli enterprise con sale server complesse. Il preventivo è sempre gratuito e personalizzato in base alle reali esigenze.',
+      'Assolutamente sì. Gestiamo sia interventi su grandi data center enterprise sia lavori di piccole dimensioni per PMI, studi professionali e sedi regionali. Nessun intervento è troppo piccolo.',
   },
   {
-    id: 'certificazioni',
-    question: 'Quali certificazioni avete?',
+    question: 'Siete certificati? Quali normative rispettate?',
     answer:
-      "Utilizziamo attrezzatura professionale ESD-safe certificata per la pulizia di apparati elettronici sensibili. Operiamo sempre nel rispetto delle normative vigenti per la sicurezza nei luoghi di lavoro (D.Lgs 81/2008).",
+      'Operiamo con attrezzature ESD-safe certificate e nel rispetto del D.Lgs. 81/2008 in materia di sicurezza sul lavoro. Su richiesta emettiamo verbali di intervento e report fotografici.',
   },
   {
-    id: 'intervento-tipo',
-    question: 'Come si svolge un intervento tipo?',
+    question: 'Come funziona un tipico intervento?',
     answer:
-      "Un intervento standard prevede: (1) sopralluogo o valutazione da remoto, (2) preventivo dettagliato, (3) intervento programmato con report fotografico pre/post, (4) consegna documentazione as-built. Ogni intervento è personalizzato in base alle esigenze del cliente.",
+      'Sopralluogo (anche da remoto con foto), preventivo dettagliato, pianificazione dell\'intervento in accordo con voi (anche fuori orario), esecuzione, report fotografico pre/post e verbale di fine lavori.',
   },
   {
-    id: 'periodicita-pulizia',
-    question: "Qual è la periodicità consigliata per la pulizia rack?",
+    question: 'Con quale frequenza consigliate la manutenzione?',
     answer:
-      'Per un data center in produzione raccomandiamo un intervento trimestrale per la pulizia approfondita e mensile per la manutenzione ordinaria. Per ambienti polverosi o con alta densità di apparati la frequenza può essere aumentata. Offriamo contratti personalizzati.',
+      'Per data center in produzione consigliamo un intervento di pulizia ogni 3-6 mesi. Per ambienti ad alta densità o con molto traffico anche mensile. Offriamo contratti di manutenzione programmata.',
   },
   {
-    id: 'tempo-intervento',
-    question: 'In quanto tempo riuscite a intervenire?',
+    question: 'In quanto tempo riuscite a intervenire in urgenza?',
     answer:
-      'Per interventi programmati solitamente entro 3-5 giorni lavorativi dalla conferma. Per emergenze concordiamo la massima disponibilità. I tempi dipendono anche dalla complessità e dalla localizzazione geografica.',
+      'Per interventi urgenti nella area di Roma siamo disponibili in 24-48 ore. Per il resto d\'Italia generalmente entro 3-5 giorni lavorativi, salvo disponibilità di voli/treni.',
   },
 ]
 
-export const SERVICE_OPTIONS = SERVICES.map((s) => ({ value: s.id, label: s.title }))
+export const SERVICE_OPTIONS = SERVICES.map((s) => ({
+  value: s.title.toLowerCase().replace(/\s+/g, '-'),
+  label: s.title,
+}))

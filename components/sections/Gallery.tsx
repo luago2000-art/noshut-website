@@ -1,167 +1,76 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { ImageOff, Eye } from 'lucide-react'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { useState, useEffect } from 'react'
 import { BeforeAfterSlider } from '@/components/common/BeforeAfterSlider'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 
-const FOLDER_POSITIONS: Record<string, { primaPosition?: string; dopoPosition?: string }> = {
-  'lavoro-02': { dopoPosition: 'bottom' },
-}
-
-const FOLDER_LABELS: Record<string, { title: string; description: string; location: string }> = {
-  'lavoro-01': {
-    title: 'Server HP — Pulizia Interna',
-    description: 'Pulizia approfondita componentistica e schede interne server HP',
-    location: 'Roma, RM',
-  },
-  'lavoro-02': {
-    title: 'Server — Pulizia Ventole',
-    description: 'Smontaggio, pulizia e rimontaggio ventole di raffreddamento server',
-    location: 'Roma, RM',
-  },
-  'lavoro-03': {
-    title: 'Server — Pulizia Cover Plastiche',
-    description: 'Smontaggio, pulizia e ripristino cover plastiche server',
-    location: 'Roma, RM',
-  },
-}
+const FALLBACK_PROJECTS = [
+  { folder: 'lavoro-01', title: 'Bonifica rack server — Roma Nord' },
+  { folder: 'lavoro-02', title: 'Riordino cablaggio — Data Center Milano' },
+  { folder: 'lavoro-03', title: 'Pulizia sala CED — Pubblica Amministrazione' },
+]
 
 export function Gallery() {
   const [folders, setFolders] = useState<string[]>([])
-  const [selected, setSelected] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     fetch('/api/gallery')
       .then((r) => r.json())
-      .then((data) => {
-        setFolders(data.folders ?? [])
-        setLoading(false)
+      .then((d) => {
+        setFolders(d.folders ?? [])
+        setLoaded(true)
       })
-      .catch(() => setLoading(false))
+      .catch(() => setLoaded(true))
   }, [])
 
-  const selectedMeta = selected ? FOLDER_LABELS[selected] : null
+  const projects = folders.length
+    ? folders.map((f, i) => ({
+        folder: f,
+        title: FALLBACK_PROJECTS[i]?.title ?? `Intervento ${i + 1}`,
+      }))
+    : null
 
   return (
-    <section id="gallery" className="py-28 bg-[#0A0E27] relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0066FF]/20 to-transparent" />
-      <div className="absolute inset-0 dot-grid opacity-12 pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionWrapper className="text-center mb-16">
-          <span className="section-label">I nostri lavori</span>
-          <h2 className="text-4xl md:text-5xl font-black font-heading text-white mb-5">
-            Prima &amp;{' '}
-            <span className="text-gradient">Dopo</span>
-          </h2>
-          <p className="text-white/45 max-w-xl mx-auto text-lg leading-relaxed">
-            Trascina il cursore per confrontare ogni intervento. I risultati parlano da soli.
-          </p>
+    <section id="gallery" className="py-24 bg-[#080808]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionWrapper>
+          <div className="mb-14">
+            <span className="section-label">I nostri lavori</span>
+            <h2 className="font-display font-black text-white leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+              Prima e dopo<br />
+              <span className="text-[#00E5FF]">ogni intervento.</span>
+            </h2>
+            <p className="mt-4 text-white/40 max-w-lg">
+              Ogni progetto viene documentato con foto prima e dopo. Scorri il cursore per vedere la trasformazione.
+            </p>
+          </div>
         </SectionWrapper>
 
-        {loading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-72 rounded-2xl bg-white/[0.04] border border-white/[0.06] animate-pulse" />
+        {!loaded ? (
+          <div className="flex items-center justify-center py-24 text-white/20 text-sm">
+            Caricamento gallery...
+          </div>
+        ) : projects ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((p, i) => (
+              <SectionWrapper key={p.folder} delay={i * 0.1}>
+                <BeforeAfterSlider folder={p.folder} title={p.title} />
+              </SectionWrapper>
             ))}
           </div>
-        )}
-
-        {!loading && folders.length === 0 && (
-          <div className="flex flex-col items-center gap-5 py-24 text-center">
-            <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/[0.07]">
-              <ImageOff className="w-10 h-10 text-white/20" />
-            </div>
-            <p className="text-white/40 text-lg font-medium">Le foto dei lavori saranno disponibili a breve.</p>
-            <p className="text-white/25 text-sm">
-              Carica le immagini in{' '}
-              <code className="text-[#00D4FF]/50 bg-white/5 px-2 py-0.5 rounded">
-                public/images/before-after/lavoro-XX/
-              </code>
+        ) : (
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] py-20 text-center">
+            <p className="text-white/20 text-sm">
+              Le immagini saranno disponibili dopo il primo sopralluogo.
+            </p>
+            <p className="text-white/10 text-xs mt-2">
+              Carica le foto in{' '}
+              <code className="bg-white/5 px-1 rounded">public/images/before-after/lavoro-XX/</code>
             </p>
           </div>
         )}
-
-        {!loading && folders.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {folders.map((folder, i) => {
-              const meta = FOLDER_LABELS[folder]
-              return (
-                <SectionWrapper key={folder} delay={i * 0.1}>
-                  <button
-                    onClick={() => setSelected(folder)}
-                    className="w-full text-left group"
-                    aria-label={`Apri gallery ${meta?.title || folder}`}
-                  >
-                    <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] group-hover:border-[#0066FF]/40 transition-all duration-400 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-blue-900/30 top-glow-line">
-                      <BeforeAfterSlider
-                        folder={folder}
-                        title={meta?.title}
-                        primaPosition={FOLDER_POSITIONS[folder]?.primaPosition}
-                        dopoPosition={FOLDER_POSITIONS[folder]?.dopoPosition}
-                      />
-
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080C22]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <div className="flex items-center gap-2 text-white text-xs font-semibold">
-                          <Eye className="w-3.5 h-3.5" />
-                          Visualizza ingrandito
-                        </div>
-                      </div>
-                    </div>
-
-                    {meta && (
-                      <div className="mt-3.5 px-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <p className="text-xs text-[#00D4FF] font-semibold tracking-wide">{meta.location}</p>
-                        </div>
-                        <p className="text-sm text-white/75 font-medium group-hover:text-white transition-colors">{meta.title}</p>
-                        <p className="text-xs text-white/40 mt-0.5">{meta.description}</p>
-                      </div>
-                    )}
-                  </button>
-                </SectionWrapper>
-              )
-            })}
-          </div>
-        )}
       </div>
-
-      {/* Lightbox */}
-      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-[#080C22] border border-white/10 rounded-2xl">
-          <DialogHeader className="px-6 pt-6 pb-2">
-            <DialogTitle className="text-white font-heading font-bold text-lg">
-              {selectedMeta?.title ?? selected}
-            </DialogTitle>
-          </DialogHeader>
-          {selected && (
-            <div className="px-6 pb-6">
-              <div className="rounded-xl overflow-hidden">
-                <BeforeAfterSlider
-                  folder={selected}
-                  primaPosition={FOLDER_POSITIONS[selected]?.primaPosition}
-                  dopoPosition={FOLDER_POSITIONS[selected]?.dopoPosition}
-                />
-              </div>
-              {selectedMeta && (
-                <div className="mt-4 flex items-center justify-between text-sm">
-                  <span className="text-white/45">{selectedMeta.description}</span>
-                  <span className="text-[#00D4FF] text-xs font-semibold">{selectedMeta.location}</span>
-                </div>
-              )}
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   )
 }

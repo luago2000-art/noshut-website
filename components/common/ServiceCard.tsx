@@ -26,7 +26,7 @@ export function ServiceCard({ service, index, featured = false }: ServiceCardPro
       className={cn(
         'group relative rounded-2xl p-6 transition-all duration-500 cursor-default overflow-hidden shimmer-card top-glow-line',
         'bg-white/[0.04] border border-white/[0.07]',
-        hovered && '-translate-y-2 border-[#0066FF]/35 shadow-2xl shadow-blue-900/30',
+        hovered && '-translate-y-2 border-[#00E5FF]/25 shadow-2xl shadow-cyan-900/20',
         featured && 'md:col-span-2 lg:col-span-1',
       )}
     >
@@ -43,7 +43,7 @@ export function ServiceCard({ service, index, featured = false }: ServiceCardPro
       />
 
       {/* Large index watermark */}
-      <div className="absolute top-3 right-4 text-8xl font-black font-heading text-white/[0.03] leading-none select-none pointer-events-none">
+      <div className="absolute top-3 right-4 text-8xl font-black font-display text-white/[0.03] leading-none select-none pointer-events-none">
         {String(index + 1).padStart(2, '0')}
       </div>
 
@@ -53,8 +53,8 @@ export function ServiceCard({ service, index, featured = false }: ServiceCardPro
           className={cn(
             'inline-flex p-3.5 rounded-xl mb-5 transition-all duration-400',
             hovered
-              ? 'gradient-primary shadow-xl shadow-blue-500/40'
-              : 'bg-[#0066FF]/12 border border-[#0066FF]/20',
+              ? 'bg-[#00E5FF] shadow-xl shadow-cyan-500/30'
+              : 'bg-[#00E5FF]/10 border border-[#00E5FF]/15',
           )}
         >
           <Icon className="w-5 h-5 text-white" />
@@ -62,8 +62,8 @@ export function ServiceCard({ service, index, featured = false }: ServiceCardPro
 
         <h3
           className={cn(
-            'text-base font-bold font-heading mb-2.5 transition-colors duration-300',
-            hovered ? 'text-[#00D4FF]' : 'text-white',
+            'text-base font-bold font-display mb-2.5 transition-colors duration-300 tracking-wide',
+            hovered ? 'text-[#00E5FF]' : 'text-white',
           )}
         >
           {service.title}
@@ -79,7 +79,7 @@ export function ServiceCard({ service, index, featured = false }: ServiceCardPro
               <span
                 className={cn(
                   'w-1.5 h-1.5 rounded-full shrink-0 transition-all duration-300',
-                  hovered ? 'bg-[#00D4FF] shadow-[0_0_6px_rgba(0,212,255,0.8)]' : 'bg-[#0066FF]/50',
+                  hovered ? 'bg-[#00E5FF] shadow-[0_0_6px_rgba(0,229,255,0.8)]' : 'bg-[#00E5FF]/30',
                 )}
               />
               {feature}

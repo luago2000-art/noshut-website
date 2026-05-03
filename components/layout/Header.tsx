@@ -49,9 +49,16 @@ export function Header() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
           aria-label="Torna in cima"
         >
+          <img
+            src="/logo/logo.png"
+            alt="NOSHUT"
+            width={36}
+            height={36}
+            className="w-9 h-9 object-contain"
+          />
           <span className="text-xl font-black tracking-[0.15em] text-white font-display group-hover:text-[#00E5FF] transition-colors duration-300">
             NO<span className="text-[#00E5FF]">SHUT</span>
           </span>

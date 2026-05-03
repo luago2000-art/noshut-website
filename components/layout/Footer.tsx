@@ -7,9 +7,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <span className="text-2xl font-black tracking-[0.15em] text-white font-display">
-              NO<span className="text-[#00E5FF]">SHUT</span>
-            </span>
+            <div className="flex items-center gap-3 mb-1">
+              <img src="/logo/logo.png" alt="NOSHUT" width={32} height={32} className="w-8 h-8 object-contain" />
+              <span className="text-2xl font-black tracking-[0.15em] text-white font-display">
+                NO<span className="text-[#00E5FF]">SHUT</span>
+              </span>
+            </div>
             <p className="mt-3 text-sm text-white/40 leading-relaxed max-w-xs">
               Specialisti in pulizia rack e bonifica data center. Partner B2B affidabile per system integrator e appalti pubblici IT.
             </p>

@@ -5,9 +5,9 @@ import { BeforeAfterSlider } from '@/components/common/BeforeAfterSlider'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 
 const FALLBACK_PROJECTS = [
-  { folder: 'lavoro-01', title: 'Bonifica rack server — Roma Nord' },
-  { folder: 'lavoro-02', title: 'Riordino cablaggio — Data Center Milano' },
-  { folder: 'lavoro-03', title: 'Pulizia sala CED — Pubblica Amministrazione' },
+  { folder: 'lavoro-01', title: 'Pulizia ventole server — Estrazione e lavaggio' },
+  { folder: 'lavoro-02', title: 'Pulizia interna rack — Sede ventole e schede' },
+  { folder: 'lavoro-03', title: 'Bonifica data center — Roma' },
 ]
 
 export function Gallery() {

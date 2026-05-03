@@ -61,7 +61,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="section-label mb-8"
           >
-            Precision Engineered IT Services
+            Tecnico IT · Roma · Dal 2016
           </motion.div>
 
           {/* Headline — lettera per lettera */}
@@ -98,8 +98,8 @@ export function Hero() {
             transition={{ delay: 1.4, duration: 0.6 }}
             className="font-mono text-sm text-platinum-dim tracking-wider max-w-lg mb-10 leading-relaxed"
           >
-            Come un orologio svizzero, ogni componente del tuo data center<br />
-            deve funzionare in perfetta sincronia. Noi lo garantiamo.
+            Pulizia rack, riordino cablaggi e bonifica data center.<br />
+            Intervento diretto di Luigi Agostino — senza subappalti, in tutta Italia.
           </motion.p>
 
           {/* CTAs */}

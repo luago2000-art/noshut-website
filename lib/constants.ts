@@ -7,8 +7,8 @@ export const COMPANY = {
   piva: '18471141004',
   email: 'l.agostino@noshut.it',
   pec: 'luigi.agostino@pec.fiscozen.it',
-  phone: '+39 06 0000000',
-  whatsapp: '+393000000000',
+  phone: '+39 351 476 9421',
+  whatsapp: '+393514769421',
   website: 'https://noshut.it',
   description:
     'Specialisti in pulizia rack, riordino cablaggi e bonifica data center. Partner affidabile per system integrator e appalti pubblici IT in tutta Italia.',
@@ -23,10 +23,10 @@ export const NAV_ITEMS: NavItem[] = [
 ]
 
 export const STATS = [
-  { value: 500, suffix: '+', label: 'Rack puliti' },
-  { value: 80, suffix: '+', label: 'Data center' },
-  { value: 120, suffix: '+', label: 'Clienti attivi' },
-  { value: 8, suffix: '+', label: 'Anni di esperienza' },
+  { value: 5, suffix: '.0★', label: 'Rating Google' },
+  { value: 100, suffix: '+', label: 'Rack bonificati' },
+  { value: 8, suffix: ' anni', label: 'Sul campo' },
+  { value: 100, suffix: '%', label: 'Copertura IT' },
 ]
 
 export const SERVICES: ServiceItem[] = [
@@ -106,27 +106,19 @@ export const SERVICES: ServiceItem[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'Marco Ferretti',
-    role: 'IT Manager',
-    company: 'TechGroup Italia',
+    name: 'Valentino Egidi',
+    role: 'Titolare',
+    company: 'Agenzia Immobiliare — Roma Centro',
     quote:
-      'NOSHUT ha trasformato il nostro data center: da un groviglio di cavi ingestibile a un\'infrastruttura ordinata e documentata. Professionali, veloci e discreti.',
+      'Necessitavo di riorganizzare e pulire il mio Rack per la mia agenzia immobiliare al centro di Roma. Ho trovato un servizio innovativo e professionale da parte di Luigi, un giovane talentuoso e con molta esperienza nonostante la giovane età.',
     rating: 5,
   },
   {
-    name: 'Alessandra Conti',
-    role: 'Infrastructure Manager',
-    company: 'Systema Integrations',
+    name: 'Stefano Aversa',
+    role: 'Responsabile Progetto',
+    company: 'Settore Industriale — Puglia',
     quote:
-      'Li utilizziamo come partner operativo su tutti i nostri cantieri. Affidabili, puntuali e con un occhio di riguardo per la sicurezza. Li consiglio senza riserve.',
-    rating: 5,
-  },
-  {
-    name: 'Roberto Mancini',
-    role: 'CTO',
-    company: 'DataCare SpA',
-    quote:
-      'Dopo la bonifica completa del nostro CED il miglioramento è stato immediato: temperature più basse, meno interventi, infrastruttura finalmente documentata.',
+      'Abbiamo commissionato un intervento di bonifica e pulizia post cantiere presso la sala server di un\'azienda industriale in Puglia e il risultato è stato eccellente.',
     rating: 5,
   },
 ]

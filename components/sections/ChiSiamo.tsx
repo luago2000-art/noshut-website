@@ -15,16 +15,16 @@ const ADVANTAGES = [
 
 const MILESTONES = [
   { year: '2016', label: 'Fondazione NOSHUT' },
-  { year: '2018', label: 'Primo contratto enterprise' },
-  { year: '2020', label: '50+ data center serviti' },
-  { year: '2024', label: '120+ clienti attivi' },
+  { year: '2019', label: 'Primi clienti B2B' },
+  { year: '2022', label: 'Copertura nazionale' },
+  { year: '2024', label: '5★ su Google' },
 ]
 
 const PARTNER_TYPES = [
-  { num: '01', title: 'System Integrator', desc: 'Subappalto operativo su cantieri IT in tutta Italia.' },
-  { num: '02', title: 'MSP & Managed Services', desc: 'Supporto tecnico on-site per i tuoi clienti finali.' },
-  { num: '03', title: 'Pubblica Amministrazione', desc: 'Iscritti ai principali albi fornitori PA.' },
-  { num: '04', title: 'Enterprise & Corporate', desc: 'SLA dedicati e contratti pluriennali.' },
+  { num: '01', title: 'PMI & Studi Professionali', desc: 'Rack e server room in uffici, agenzie, studi: interventi veloci e discreti.' },
+  { num: '02', title: 'System Integrator', desc: 'Subappalto operativo su cantieri IT in tutta Italia.' },
+  { num: '03', title: 'MSP & Managed Services', desc: 'Supporto tecnico on-site white-label per i tuoi clienti finali.' },
+  { num: '04', title: 'Settore Industriale', desc: 'Bonifica sala server post-cantiere, ambienti polverosi, interventi in Puglia e tutta Italia.' },
 ]
 
 /* Interactive gear that follows mouse */
@@ -123,23 +123,23 @@ export function ChiSiamo() {
               <div className="section-label">III. L&apos;Orologiaio</div>
               <h2 className="font-display font-bold text-platinum leading-tight mb-6"
                 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
-                Precisione tecnica.<br />
-                <span className="text-brass-gradient">Zero compromessi.</span>
+                Giovane.<br />
+                <span className="text-brass-gradient">Esperto sul campo.</span>
               </h2>
               <p className="font-body text-platinum/40 leading-relaxed mb-4">
-                NOSHUT nasce dall&apos;esperienza di Luigi Agostino nel settore IT: anni di cantieri, data center e infrastrutture critiche hanno generato una specializzazione unica in Italia.
+                NOSHUT è Luigi Agostino: tecnico IT con anni di cantieri reali, data center e infrastrutture critiche alle spalle. Una realtà giovane, costruita sulla competenza diretta — non sul marketing.
               </p>
               <p className="font-body text-platinum/40 leading-relaxed mb-10">
-                Non siamo una società di pulizie generica. Siamo tecnici IT che capiscono le infrastrutture che toccano.
+                Niente subappalti, niente intermediari. Quando arriva NOSHUT, arriva Luigi. Con l&apos;attrezzatura giusta, la conoscenza degli apparati e la cura di chi tratta ogni rack come fosse il proprio.
               </p>
 
               {/* Flip counters */}
               <div className="grid grid-cols-2 gap-3 mb-10">
                 {[
-                  { val: 500, suf: '+', label: 'Rack bonificati' },
-                  { val: 8, suf: ' anni', label: 'Esperienza' },
-                  { val: 120, suf: '+', label: 'Clienti attivi' },
-                  { val: 100, suf: '%', label: 'Soddisfazione' },
+                  { val: 100, suf: '+', label: 'Rack bonificati' },
+                  { val: 8, suf: ' anni', label: 'Sul campo' },
+                  { val: 5, suf: '.0★', label: 'Rating Google' },
+                  { val: 100, suf: '%', label: 'Intervento diretto' },
                 ].map((k) => (
                   <div key={k.label} className="card-metal rounded p-4">
                     <FlipCounter value={k.val} suffix={k.suf} className="text-2xl mb-0.5" />

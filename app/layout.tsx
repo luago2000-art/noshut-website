@@ -1,21 +1,26 @@
 import type { Metadata } from 'next'
-import { Outfit, Barlow_Condensed } from 'next/font/google'
+import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { baseMetadata, localBusinessSchema } from '@/lib/seo'
-import { CustomCursor } from '@/components/common/CustomCursor'
 import { SmoothScroll } from '@/components/common/SmoothScroll'
+import { ScrollProgress } from '@/components/common/ScrollProgress'
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
 })
 
-const barlowCondensed = Barlow_Condensed({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['700', '800', '900'],
-  variable: '--font-display',
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -29,11 +34,11 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${outfit.variable} ${barlowCondensed.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#050505] text-white font-body">
+      <body className="min-h-full flex flex-col bg-steel-dark text-platinum font-body">
         <SmoothScroll />
-        <CustomCursor />
+        <ScrollProgress />
         {children}
         <Script
           id="local-business-schema"

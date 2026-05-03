@@ -55,7 +55,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo/logo.png" alt="NOSHUT" width={28} height={28} className="w-7 h-7 object-contain opacity-90" />
+              <img src="/logo/logo.png" alt="NOSHUT" width={28} height={28} className="w-7 h-7 object-contain" style={{ filter: 'brightness(0) invert(1) sepia(0.65) saturate(4) hue-rotate(5deg)', opacity: 0.88 }} />
               <span className="font-display text-xl font-bold tracking-[0.15em] text-platinum">
                 NO<span className="text-brass-gradient">SHUT</span>
               </span>

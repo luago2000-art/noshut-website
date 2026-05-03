@@ -44,7 +44,7 @@ export function Header() {
           className="flex items-center gap-3 group"
           aria-label="Torna in cima"
         >
-          <img src="/logo/logo.png" alt="NOSHUT" width={32} height={32} className="w-8 h-8 object-contain opacity-90" />
+          <img src="/logo/logo.png" alt="NOSHUT" width={32} height={32} className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) invert(1) sepia(0.65) saturate(4) hue-rotate(5deg)', opacity: 0.92 }} />
           <span className="font-display font-bold text-lg tracking-[0.12em] text-platinum group-hover:text-brass transition-colors duration-300">
             NO<span className="text-brass">SHUT</span>
           </span>

@@ -6,7 +6,7 @@ import { motion, type Variants } from 'framer-motion'
 import { AnimatedCounter } from '@/components/common/AnimatedCounter'
 import { STATS, COMPANY } from '@/lib/constants'
 
-const GearScene = dynamic(() => import('@/components/three/GearScene'), {
+const GearScene = dynamic(() => import('@/components/three/DataCenterScene'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
